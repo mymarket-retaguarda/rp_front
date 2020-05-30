@@ -42,6 +42,12 @@
       <v-toolbar-title>myMarket</v-toolbar-title>
 
       <v-spacer></v-spacer>
+      <v-text-field 
+        style="margin-top: 5px;"
+        color="info" 
+        loading 
+        label="Buscar..."
+      ></v-text-field>
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
@@ -51,6 +57,7 @@
         v-model="ChangeTheme" 
         inset
         :v-on="chengeTheme()"
+        :label="`Tema: ${theme}`"
       ></v-switch>
     </div>
     </v-app-bar>
@@ -78,6 +85,8 @@ export default {
   data: () => ({
     drawer: null,
     ChangeTheme: false,
+    theme: '',
+    search: ''
   }),
   created() {
       this.$vuetify.theme.dark = this.ChangeTheme;
@@ -88,8 +97,10 @@ export default {
     chengeTheme() {
       if(this.ChangeTheme === false) {
         this.$vuetify.theme.dark = true
+        this.theme = 'Escuro'
       } else {
         this.$vuetify.theme.dark = false
+        this.theme = 'Claro'
       }
     }
   }
