@@ -6,6 +6,7 @@ import vuetify from './plugins/vuetify';
 // Imports Routers
 import Products from './components/Products/Products.vue'
 import SalesUser from './components/Sales/SalesUser.vue'
+import Financial from './components/Financial/Financial.vue'
 
 
 Vue.use(VueRouter);
@@ -15,6 +16,10 @@ const router = new VueRouter({
     {
       path: '/products',
       component: Products
+    },
+    {
+      path: '/financial',
+      component: Financial
     },
     {
       path: '/',

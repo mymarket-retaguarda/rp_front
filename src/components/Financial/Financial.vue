@@ -1,7 +1,7 @@
 <template>
   <v-card color="basil">
     <v-card-title class="text-center justify-center py-6">
-      <h1 class="font-weight-bold display-3 basil--text">Produtos</h1>
+      <h1 class="font-weight-bold display-3 basil--text">Financeiro</h1>
     </v-card-title>
 
     <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
@@ -11,7 +11,6 @@
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in items" :key="item">
         <v-card color="basil" flat>
-          <SrcProducts />
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -26,21 +25,17 @@
 </style>
 
 <script>
-import SrcProducts from "./SrcProducts";
 
 export default {
   components: {
-    // eslint-disable-next-line vue/no-unused-components
-    SrcProducts: SrcProducts
   },
   data() {
     return {
       tab: null,
       items: [
-        { title: "consultar produtos", router: <SrcProducts /> },
-        { title: "novos produtos", router: '' },
-        { title: "promoções", router: '' },
-        { title: "estoque", router: '' }
+        { title: "contas à pagar", router: '' },
+        { title: "contas à receber", router: '' },
+        { title: "notas e boletos", router: '' }
       ]
     };
   }
