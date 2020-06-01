@@ -12,7 +12,7 @@
         </v-list-item>
         <v-list-item link>
           <v-list-item-action>
-            <v-icon>mdi-cog</v-icon>
+            <v-icon>{{ icons.mdiBarcode }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Produtos</v-list-item-title>
@@ -20,10 +20,42 @@
         </v-list-item>
         <v-list-item link>
           <v-list-item-action>
-            <v-icon>mdi-Account</v-icon>
+            <v-icon>{{ icons.mdiChartAreaspline  }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Usuarios</v-list-item-title>
+            <v-list-item-title>Vendas</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>{{ icons.mdiCashUsdOutline }}</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Financeiro</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>{{ icons.mdiFileChart }}</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Relatórios</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>{{ icons.mdiAccount }}</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Usuários</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>{{ icons.mdiAccountTie }}</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Área Adm</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link>
@@ -45,7 +77,7 @@
       <v-text-field 
         style="margin-top: 5px;"
         color="info" 
-        loading 
+        loading
         label="Buscar..."
       ></v-text-field>
       <v-btn icon>
@@ -63,7 +95,7 @@
     </v-app-bar>
 
     <v-content>
-      <SalesUser />
+      <router-view />
     </v-content>
 
     <v-footer app>
@@ -73,16 +105,29 @@
 </template>
 
 <script>
-import SalesUser from "./components/SalesUser";
+
+  import {
+    mdiAccount,
+    mdiBarcode ,
+    mdiAccountTie ,
+    mdiCashUsdOutline ,
+    mdiChartAreaspline ,
+    mdiFileChart  
+  } from '@mdi/js'
 
 export default {
   props: {
     source: String
   },
-  components: {
-    SalesUser: SalesUser
-  },
   data: () => ({
+    icons: {
+        mdiAccount,
+        mdiBarcode ,
+        mdiAccountTie ,
+        mdiCashUsdOutline ,
+        mdiChartAreaspline ,
+        mdiFileChart  
+      },
     drawer: null,
     ChangeTheme: false,
     theme: '',

@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row justify="center">
-      <v-subheader>Acompanhe em Real Time as Vendas de Hoje</v-subheader>
+      <v-subheader>Acompanhe em Tempo Real as Vendas de Hoje</v-subheader>
 
       <v-expansion-panels popout>
         <v-expansion-panel
