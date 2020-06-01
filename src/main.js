@@ -12,6 +12,7 @@ import Financial from './components/Financial/Financial.vue'
 Vue.use(VueRouter);
 
 const router = new VueRouter({
+  mode: 'history',
   routes: [
     {
       path: '/products',

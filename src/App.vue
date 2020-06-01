@@ -2,69 +2,29 @@
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list dense>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-view-dashboard</v-icon>
-          </v-list-item-action>
+        <v-list-item two-line :class="miniVariant && 'px-0'">
+          <v-list-item-avatar>
+            <img
+              src="https://scontent.fgru5-1.fna.fbcdn.net/v/t1.0-9/84147709_1041326446242828_5316676609116209152_n.jpg?_nc_cat=103&_nc_sid=7aed08&_nc_eui2=AeFXOXjCnBl_lWsH3l43F9Um-fW4xTlFuW759bjFOUW5btWCfd7FDy29CdaHMJGVGIDAd7pyb2bH4WeIe6coRO5F&_nc_oc=AQnPp5uBJWrAxbVl0MsR0DCzTVF6XATvAhVGn-YKbo2xhmplRC6i1PcAlB9vADm-G1UD57XUAe-vt8JPQHjgs1nb&_nc_ht=scontent.fgru5-1.fna&oh=ac11e60792202ea25f9a0b66935262a3&oe=5EFB6965"
+            />
+          </v-list-item-avatar>
+
           <v-list-item-content>
-            <v-list-item-title>Dashboard</v-list-item-title>
+            <v-list-item-title>Euclides Nascimento</v-list-item-title>
+            <v-list-item-subtitle>Gerente Adm</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>{{ icons.mdiBarcode }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Produtos</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>{{ icons.mdiChartAreaspline }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Vendas</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>{{ icons.mdiCashUsdOutline }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Financeiro</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>{{ icons.mdiFileChart }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Relatórios</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>{{ icons.mdiAccount }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Usuários</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>{{ icons.mdiAccountTie }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Área Adm</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-cog</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Configurações</v-list-item-title>
-          </v-list-item-content>
+
+        <v-divider></v-divider>
+
+        <v-list-item v-for="item in items" :key="item.title" :href="item.link">
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -98,15 +58,6 @@
 
       <v-spacer></v-spacer>
       <div>{{ new Date() | dateFormat('YYYY.MM.DD', dateFormatConfig) }}</div>
-      <v-spacer></v-spacer>
-
-      <h5 style="margin-right: 5px;">Bem vindo: Euclides Nascimento</h5>
-      <v-avatar size="30">
-        <img
-          src="https://scontent.fgru5-1.fna.fbcdn.net/v/t1.0-0/s552x414/90877452_1073910689651070_2626737290256318464_n.jpg?_nc_cat=105&_nc_sid=13bebb&_nc_eui2=AeH7HyhojggU8Orl19iYcGFsYErHpHSx2zNgSsekdLHbM880oRrICKx-Wqx-bvInQj7jOfi5rBGQs0W0dCtI4DaJ&_nc_oc=AQlF-4Qa1PRpKcirF3frJuW0yI5ma7rVF1YvdXmfYwu5NCaCLyWPRliQ5Mgf9JxCqPMpfvS4slDqtzx_sItjFjOs&_nc_ht=scontent.fgru5-1.fna&_nc_tp=7&oh=1572a074c1bf508132fa07a8bdac1d2d&oe=5EFB058E"
-          alt="Euclides Nascimento"
-        />
-      </v-avatar>
     </v-footer>
   </v-app>
 </template>
@@ -126,31 +77,56 @@ export default {
     source: String
   },
   data: () => ({
-     dateFormatConfig: {
-          dayOfWeekNames: [
-            'Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta',
-            'Sexta', 'Sábado'
-          ],
-          dayOfWeekNamesShort: [
-            'Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'
-          ],
-          monthNames: [
-            'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
-            'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
-          ],
-          monthNamesShort: [
-            'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
-            'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'
-          ]
-        },
-    icons: {
-      mdiAccount,
-      mdiBarcode,
-      mdiAccountTie,
-      mdiCashUsdOutline,
-      mdiChartAreaspline,
-      mdiFileChart
+    dateFormatConfig: {
+      dayOfWeekNames: [
+        "Domingo",
+        "Segunda",
+        "Terça",
+        "Quarta",
+        "Quinta",
+        "Sexta",
+        "Sábado"
+      ],
+      dayOfWeekNamesShort: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],
+      monthNames: [
+        "Janeiro",
+        "Fevereiro",
+        "Março",
+        "Abril",
+        "Maio",
+        "Junho",
+        "Julho",
+        "Agosto",
+        "Setembro",
+        "Outubro",
+        "Novembro",
+        "Dezembro"
+      ],
+      monthNamesShort: [
+        "Jan",
+        "Fev",
+        "Mar",
+        "Abr",
+        "Mai",
+        "Jun",
+        "Jul",
+        "Ago",
+        "Set",
+        "Out",
+        "Nov",
+        "Dez"
+      ]
     },
+    items: [
+      { title: "Dashboard", icon: "mdi-view-dashboard", link: "/" },
+      { title: "Produtos", icon: mdiBarcode, link: "/products" },
+      { title: "Vendas", icon: mdiChartAreaspline, link: "/sales" },
+      { title: "Financeiro", icon: mdiCashUsdOutline, link: "/financial" },
+      { title: "Relatórios", icon: mdiFileChart, link: "/" },
+      { title: "Usuários", icon: mdiAccount, link: "/" },
+      { title: "Área Administrativa", icon: mdiAccountTie, link: "/" },
+      { title: "Configurações", icon: "mdi-cog", link: "/" }
+    ],
     drawer: null,
     ChangeTheme: false,
     theme: "",
