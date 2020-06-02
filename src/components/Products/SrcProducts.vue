@@ -1,13 +1,24 @@
 <template>
-  <v-data-table :headers="headers" :items="desserts" sort-by="quant" class="elevation-1">
-    <template v-slot:item.quant="{ item }">
-      <v-chip :color="getColor(item.quant)" dark>{{ item.quant }}</v-chip>
-    </template>
-    <template v-slot:item.actions="{ item }">
-      <v-icon small class="mr-2" @click="editItem(item)">mdi-pencil</v-icon>
-      <v-icon small @click="deleteItem(item)">mdi-delete</v-icon>
-    </template>
-  </v-data-table>
+  <v-card>
+    <v-card-title>
+      Consulta de Produtos
+      <v-spacer></v-spacer>
+      <v-text-field
+        v-model="search"
+        append-icon="mdi-magnify"
+        label="Consulte produtos por código de barras, código interno ou nome..."
+      ></v-text-field>
+    </v-card-title>
+    <v-data-table :headers="headers" :items="desserts" sort-by="quant" class="elevation-1">
+      <template v-slot:item.quant="{ item }">
+        <v-chip :color="getColor(item.quant)" dark>{{ item.quant }}</v-chip>
+      </template>
+      <template v-slot:item.actions="{ item }">
+        <v-icon small class="mr-2" @click="editItem(item)">mdi-pencil</v-icon>
+        <v-icon small @click="deleteItem(item)">mdi-delete</v-icon>
+      </template>
+    </v-data-table>
+  </v-card>
 </template>
 
 <script>
@@ -61,7 +72,7 @@ export default {
         {
           productName: "Coca-Cola 2LT",
           ean: 789564656163,
-          quant: 22,
+          quant: 15,
           price: "R$ 6,99"
         },
         {
@@ -93,15 +104,15 @@ export default {
           ean: 789564656222,
           quant: 12,
           price: "R$ 3,99"
-        },
+        }
       ];
     },
 
-    getColor (quant) {
-        if (quant < 10) return 'red'
-        else if (quant < 20 ) return 'orange'
-        else return 'green'
-      },
+    getColor(quant) {
+      if (quant < 10) return "red";
+      else if (quant < 20) return "orange";
+      else return "green";
+    },
 
     editItem(item) {
       this.editedIndex = this.desserts.indexOf(item);
