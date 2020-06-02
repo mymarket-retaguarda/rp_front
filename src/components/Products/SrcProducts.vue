@@ -1,5 +1,40 @@
 <template>
   <v-card>
+
+    <template v-slot:top>
+      <v-toolbar flat color="white">
+        <v-dialog v-model="dialog" max-width="500px">
+          <v-card>
+
+            <v-card-text>
+              <v-container>
+                <v-row>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-text-field v-model="editedItem.productName" label="Produto"></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-text-field v-model="editedItem.ean" label="EAN-13"></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-text-field v-model="editedItem.quant" label="Estoque"></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="6" md="4">
+                    <v-text-field v-model="editedItem.price" label="Preço"></v-text-field>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-card-text>
+
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="blue darken-1" text @click="close">Cancelar</v-btn>
+              <v-btn color="blue darken-1" text @click="save">Salvar</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </v-toolbar>
+    </template>
+
     <v-card-title>
       Consulta de Produtos
       <v-spacer></v-spacer>
@@ -9,13 +44,17 @@
         label="Consulte produtos por código de barras, código interno ou nome..."
       ></v-text-field>
     </v-card-title>
-    <v-data-table :headers="headers" :items="desserts" sort-by="quant" class="elevation-1">
+
+    <v-data-table :headers="headers" :items="products" sort-by="quant" class="elevation-1">
       <template v-slot:item.quant="{ item }">
         <v-chip :color="getColor(item.quant)" dark>{{ item.quant }}</v-chip>
       </template>
       <template v-slot:item.actions="{ item }">
         <v-icon small class="mr-2" @click="editItem(item)">mdi-pencil</v-icon>
         <v-icon small @click="deleteItem(item)">mdi-delete</v-icon>
+      </template>
+      <template v-slot:no-data>
+        <v-btn color="primary" @click="initialize">Reset</v-btn>
       </template>
     </v-data-table>
   </v-card>
@@ -24,36 +63,31 @@
 <script>
 export default {
   data: () => ({
-    dialog: false,
+    dialog: true,
     headers: [
-      { text: "EAN13", value: "ean" },
+      { text: "EAN-13", value: "ean" },
       { text: "Produto", value: "productName" },
       { text: "Estoque", value: "quant" },
       { text: "Preço", value: "price" },
       { text: "Ações", value: "actions", sortable: false }
     ],
-    desserts: [],
+    products: [],
     editedIndex: -1,
     editedItem: {
-      name: "",
-      calories: 0,
-      fat: 0,
-      carbs: 0,
-      protein: 0
+      productName: "",
+      ean: 0,
+      quant: 0,
+      price: ""
     },
     defaultItem: {
-      name: "",
-      calories: 0,
-      fat: 0,
-      carbs: 0,
-      protein: 0
+      productName: "",
+      ean: 0,
+      quant: 0,
+      price: ""
     }
   }),
 
   computed: {
-    formTitle() {
-      return this.editedIndex === -1 ? "New Item" : "Edit Item";
-    }
   },
 
   watch: {
@@ -68,7 +102,7 @@ export default {
 
   methods: {
     initialize() {
-      this.desserts = [
+      this.products = [
         {
           productName: "Coca-Cola 2LT",
           ean: 789564656163,
@@ -115,15 +149,15 @@ export default {
     },
 
     editItem(item) {
-      this.editedIndex = this.desserts.indexOf(item);
+      this.editedIndex = this.products.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.dialog = true;
     },
 
     deleteItem(item) {
-      const index = this.desserts.indexOf(item);
-      confirm("Are you sure you want to delete this item?") &&
-        this.desserts.splice(index, 1);
+      const index = this.products.indexOf(item);
+      confirm("Certeza que deseja deletar o Produto?") &&
+        this.products.splice(index, 1);
     },
 
     close() {
@@ -136,9 +170,9 @@ export default {
 
     save() {
       if (this.editedIndex > -1) {
-        Object.assign(this.desserts[this.editedIndex], this.editedItem);
+        Object.assign(this.products[this.editedIndex], this.editedItem);
       } else {
-        this.desserts.push(this.editedItem);
+        this.products.push(this.editedItem);
       }
       this.close();
     }
