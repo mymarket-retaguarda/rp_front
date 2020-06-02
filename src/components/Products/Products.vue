@@ -11,7 +11,7 @@
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in items" :key="item">
         <v-card color="basil" flat>
-          <SrcProducts />
+          <component id="component" :is="item.component" />
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -23,10 +23,17 @@
 .basil--text {
   color: #0e6dcc !important;
 }
+
+#component {
+  padding: 15px;
+}
 </style>
 
 <script>
 import SrcProducts from "./SrcProducts";
+import NewProduct from "./NewProduct";
+import PromProducts from "./PromProducts";
+import StockProducts from "./StockProducts";
 
 export default {
   components: {
@@ -37,10 +44,10 @@ export default {
     return {
       tab: null,
       items: [
-        { title: "consultar produtos", router: <SrcProducts /> },
-        { title: "novos produtos", router: '' },
-        { title: "promoções", router: '' },
-        { title: "estoque", router: '' }
+        { title: "consultar produtos", component: SrcProducts },
+        { title: "novos produtos", component: NewProduct },
+        { title: "promoções", component: PromProducts },
+        { title: "estoque", component: StockProducts }
       ]
     };
   }
