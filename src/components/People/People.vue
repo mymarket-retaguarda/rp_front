@@ -35,10 +35,10 @@ export default {
     return {
       tab: null,
       items: [
-        { title: "Fornecedores de Produtos", router: ''},
-        { title: "Fornecedores de Serviços", router: ''},
-        { title: "Colaboradores Internos", router: '' },
-        { title: "Colaboradores Externos", router: '' }
+        { title: "Fornecedores", component: ''},
+        { title: "Novos Fornecedores", component: ''},
+        { title: "Colaboradores", component: '' },
+        { title: "Novos Colaboradores", component: '' }
       ]
     };
   }

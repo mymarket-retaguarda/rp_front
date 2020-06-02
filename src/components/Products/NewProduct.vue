@@ -1,5 +1,9 @@
 <template>
   <v-form v-model="valid">
+      
+    <v-card-title>
+      Cadastro de Produtos
+    </v-card-title>
     <v-row>
       <v-col cols="12" md="3">
         <v-text-field v-model="barCod" label="Código de Barras"></v-text-field>
@@ -41,7 +45,7 @@ export default {
     ],
     subGroupProducts: [
         'Nacionais',
-        'Importadas',
+        'Importados',
     ],
     emailRules: [
       v => !!v || "E-mail is required",

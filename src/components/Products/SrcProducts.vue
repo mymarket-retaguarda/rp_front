@@ -36,7 +36,7 @@
     </template>
 
     <v-card-title>
-      Consulta de Produtos
+      Consulta de Produtos <v-icon id="titleIcon">{{ icons.icon }}</v-icon>
       <v-spacer></v-spacer>
       <v-text-field
         v-model="search"
@@ -61,6 +61,10 @@
 </template>
 
 <script>
+import {
+  mdiMagnify
+} from "@mdi/js";
+
 export default {
   data: () => ({
     dialog: true,
@@ -71,6 +75,9 @@ export default {
       { text: "Preço", value: "price" },
       { text: "Ações", value: "actions", sortable: false }
     ],
+    icons: {
+      icon: mdiMagnify
+    },
     products: [],
     editedIndex: -1,
     editedItem: {

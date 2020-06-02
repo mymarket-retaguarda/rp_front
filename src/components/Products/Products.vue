@@ -27,6 +27,9 @@
 #component {
   padding: 15px;
 }
+#titleIcon {
+  margin-left: 10px;
+}
 </style>
 
 <script>

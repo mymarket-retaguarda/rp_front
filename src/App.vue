@@ -16,15 +16,14 @@
         </v-list-item>
 
         <v-divider></v-divider>
+        <v-list-item v-for="item in items" :key="item.title" :to="item.link">
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
 
-        <v-list-item v-for="item in items" :key="item.title" :href="item.link">
-            <v-list-item-icon>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-icon>
-
-            <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item-content>
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -121,7 +120,7 @@ export default {
     items: [
       { title: "Dashboard", icon: "mdi-view-dashboard", link: "/" },
       { title: "Produtos", icon: mdiBarcode, link: "/products" },
-      { title: "Pessoas", icon: mdiAccountGroup , link: "/people" },
+      { title: "Pessoas", icon: mdiAccountGroup, link: "/people" },
       { title: "Vendas", icon: mdiChartAreaspline, link: "/sales" },
       { title: "Financeiro", icon: mdiCashUsdOutline, link: "/financial" },
       { title: "Relatórios", icon: mdiFileChart, link: "/report" },
