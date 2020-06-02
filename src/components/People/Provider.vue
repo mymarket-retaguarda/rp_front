@@ -1,11 +1,9 @@
 <template>
   <v-card>
-
     <template v-slot:top>
       <v-toolbar flat color="white">
         <v-dialog v-model="dialog" max-width="500px">
           <v-card>
-
             <v-card-text>
               <v-container>
                 <v-row>
@@ -36,16 +34,17 @@
     </template>
 
     <v-card-title>
-      Fornecedores <v-icon id="titleIcon">{{ icons.icon }}</v-icon>
+      Consulta de Fornecedores
+      <v-icon id="titleIcon">{{ icons.icon }}</v-icon>
       <v-spacer></v-spacer>
       <v-text-field
         v-model="search"
         append-icon="mdi-magnify"
-        label="Consulte produtos por código de barras, código interno ou nome..."
+        label="Consulte seus Fornecedores por nome, CNPJ, IE..."
       ></v-text-field>
     </v-card-title>
 
-    <v-data-table :headers="headers" :items="products" sort-by="quant" class="elevation-1">
+    <v-data-table :headers="headers" :items="provider" sort-by="quant" class="elevation-1">
       <template v-slot:item.quant="{ item }">
         <v-chip :color="getColor(item.quant)" dark>{{ item.quant }}</v-chip>
       </template>
@@ -61,41 +60,38 @@
 </template>
 
 <script>
-import {
-  mdiMagnify
-} from "@mdi/js";
+import { mdiMagnify } from "@mdi/js";
 
 export default {
   data: () => ({
     dialog: true,
     headers: [
-      { text: "EAN-13", value: "ean" },
-      { text: "Produto", value: "productName" },
-      { text: "Estoque", value: "quant" },
-      { text: "Preço", value: "price" },
+      { text: "Nome Fantasia", value: "name" },
+      { text: "CNPJ", value: "cnpj" },
+      { text: "IE", value: "ie" },
+      { text: "Grupo", value: "group" },
       { text: "Ações", value: "actions", sortable: false }
     ],
     icons: {
       icon: mdiMagnify
     },
-    products: [],
+    provider: [],
     editedIndex: -1,
     editedItem: {
-      productName: "",
-      ean: 0,
-      quant: 0,
-      price: ""
+      name: "",
+      cnpj: "",
+      ie: "",
+      group: ""
     },
     defaultItem: {
-      productName: "",
-      ean: 0,
-      quant: 0,
-      price: ""
+      name: "",
+      cnpj: "",
+      ie: "",
+      group: ""
     }
   }),
 
-  computed: {
-  },
+  computed: {},
 
   watch: {
     dialog(val) {
@@ -109,42 +105,24 @@ export default {
 
   methods: {
     initialize() {
-      this.products = [
+      this.provider = [
         {
-          productName: "Coca-Cola 2LT",
-          ean: 789564656163,
-          quant: 15,
-          price: "R$ 6,99"
+          name: "Cocacola Distribuidora de Bebidas LTDA",
+          cnpj: "35.235.265/0001-58",
+          ie: "ISENTO",
+          group: "Bebidas"
         },
         {
-          productName: "Guaraná Kuat 2LT",
-          ean: 789564656547,
-          quant: 5,
-          price: "R$ 4,99"
+          name: "Itaipava Distribuidora de Bebidas LTDA",
+          cnpj: "35.236.528/0002-98",
+          ie: "89785487",
+          group: "Bebidas"
         },
         {
-          productName: "Suco Tang Uva UND",
-          ean: 789564634444,
-          quant: 350,
-          price: "R$ 0,99"
-        },
-        {
-          productName: "Suco del valle 250ml",
-          ean: 789564656163,
-          quant: 32,
-          price: "R$ 2,69"
-        },
-        {
-          productName: "Suco Laranja Del Valle Fresh 200ml",
-          ean: 789564621555,
-          quant: 22,
-          price: "R$ 1,29"
-        },
-        {
-          productName: "Mineirinho 2LT",
-          ean: 789564656222,
-          quant: 12,
-          price: "R$ 3,99"
+          name: "Pepisico Distribuidora de Alimentos LTDA",
+          cnpj: "23.365.258/0001-69",
+          ie: "56462168",
+          group: "Não Perecíveis"
         }
       ];
     },
@@ -156,15 +134,15 @@ export default {
     },
 
     editItem(item) {
-      this.editedIndex = this.products.indexOf(item);
+      this.editedIndex = this.provider.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.dialog = true;
     },
 
     deleteItem(item) {
-      const index = this.products.indexOf(item);
-      confirm("Certeza que deseja deletar o Produto?") &&
-        this.products.splice(index, 1);
+      const index = this.provider.indexOf(item);
+      confirm("Certeza que deseja deletar o Fornecedor?") &&
+        this.provider.splice(index, 1);
     },
 
     close() {
@@ -177,9 +155,9 @@ export default {
 
     save() {
       if (this.editedIndex > -1) {
-        Object.assign(this.products[this.editedIndex], this.editedItem);
+        Object.assign(this.provider[this.editedIndex], this.editedItem);
       } else {
-        this.products.push(this.editedItem);
+        this.provider.push(this.editedItem);
       }
       this.close();
     }
