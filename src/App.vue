@@ -122,9 +122,9 @@ export default {
       { title: "Produtos", icon: mdiBarcode, link: "/products" },
       { title: "Vendas", icon: mdiChartAreaspline, link: "/sales" },
       { title: "Financeiro", icon: mdiCashUsdOutline, link: "/financial" },
-      { title: "Relatórios", icon: mdiFileChart, link: "/reports" },
+      { title: "Relatórios", icon: mdiFileChart, link: "/report" },
       { title: "Usuários", icon: mdiAccount, link: "/users" },
-      { title: "Área Administrativa", icon: mdiAccountTie, link: "/placeadmin" },
+      { title: "Área Administrativa", icon: mdiAccountTie, link: "/admin" },
       { title: "Configurações", icon: "mdi-cog", link: "/config" }
     ],
     drawer: null,
