@@ -69,6 +69,7 @@ import {
   mdiAccountTie,
   mdiCashUsdOutline,
   mdiChartAreaspline,
+  mdiAccountGroup,
   mdiFileChart
 } from "@mdi/js";
 
@@ -120,6 +121,7 @@ export default {
     items: [
       { title: "Dashboard", icon: "mdi-view-dashboard", link: "/" },
       { title: "Produtos", icon: mdiBarcode, link: "/products" },
+      { title: "Pessoas", icon: mdiAccountGroup , link: "/people" },
       { title: "Vendas", icon: mdiChartAreaspline, link: "/sales" },
       { title: "Financeiro", icon: mdiCashUsdOutline, link: "/financial" },
       { title: "Relatórios", icon: mdiFileChart, link: "/report" },

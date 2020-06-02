@@ -19,7 +19,7 @@
             value: 'typePayment',
           },
           { text: 'Valor da Venda', value: 'sale' },
-          { text: 'Comissão', value: 'commission' },
+          { text: 'Imposto', value: 'commission' },
           { text: 'Desconto', value: 'discount' }
         ],
         desserts: [
