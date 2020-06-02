@@ -44,7 +44,7 @@ import {
   mdiMagnify,
   mdiPercentOutline,
   mdiPencilPlus,
-  mdiSemanticWeb 
+  mdiSemanticWeb
 } from "@mdi/js";
 
 export default {

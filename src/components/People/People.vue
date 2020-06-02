@@ -11,7 +11,7 @@
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in items" :key="item">
         <v-card color="basil" flat>
-          <SrcProducts />
+          <component :is="item.component" />
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -26,6 +26,10 @@
 </style>
 
 <script>
+import Provider from './Provider'
+import NewProvider from './NewProvider'
+import Collaborator from './Collaborator'
+import NewCollaborator from './NewCollaborator'
 
 export default {
   components: {
@@ -35,10 +39,10 @@ export default {
     return {
       tab: null,
       items: [
-        { title: "Fornecedores", component: ''},
-        { title: "Novos Fornecedores", component: ''},
-        { title: "Colaboradores", component: '' },
-        { title: "Novos Colaboradores", component: '' }
+        { title: "Consultar Fornecedores", component: Provider },
+        { title: "Novos Fornecedores", component: NewProvider },
+        { title: "Consultar Colaboradores", component: Collaborator },
+        { title: "Novos Colaboradores", component: NewCollaborator }
       ]
     };
   }
