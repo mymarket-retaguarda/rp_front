@@ -5,7 +5,7 @@
     </v-card-title>
 
     <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
-      <v-tab v-for="item in items" :key="item">{{ item.title }}</v-tab>
+      <v-tab v-for="item in items" :key="item">{{ item.title }} <v-icon id="titleIcon">{{ item.icon }}</v-icon></v-tab>
     </v-tabs>
 
     <v-tabs-items v-model="tab">
@@ -23,6 +23,9 @@
 .basil--text {
   color: #0e6dcc !important;
 }
+#titleIcon {
+  margin-left: 7px;
+}
 </style>
 
 <script>
@@ -30,6 +33,12 @@ import Provider from './Provider'
 import NewProvider from './NewProvider'
 import Collaborator from './Collaborator'
 import NewCollaborator from './NewCollaborator'
+import {
+  mdiAccountMultiplePlus,
+  mdiBriefcasePlus,
+  mdiBriefcaseSearchOutline,
+  mdiAccountSearch
+} from "@mdi/js";
 
 export default {
   components: {
@@ -39,10 +48,10 @@ export default {
     return {
       tab: null,
       items: [
-        { title: "Consultar Fornecedores", component: Provider },
-        { title: "Novos Fornecedores", component: NewProvider },
-        { title: "Consultar Colaboradores", component: Collaborator },
-        { title: "Novos Colaboradores", component: NewCollaborator }
+        { title: "Consultar Fornecedores", component: Provider, icon: mdiBriefcaseSearchOutline },
+        { title: "Novos Fornecedores", component: NewProvider, icon: mdiBriefcasePlus },
+        { title: "Consultar Colaboradores", component: Collaborator, icon: mdiAccountSearch  },
+        { title: "Novos Colaboradores", component: NewCollaborator, icon: mdiAccountMultiplePlus }
       ]
     };
   }

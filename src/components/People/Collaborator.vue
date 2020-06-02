@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import { mdiMagnify } from "@mdi/js";
+import { mdiAccountSearch } from "@mdi/js";
 
 export default {
   data: () => ({
@@ -74,7 +74,7 @@ export default {
       { text: "Ações", value: "actions", sortable: false }
     ],
     icons: {
-      icon: mdiMagnify
+      icon: mdiAccountSearch
     },
     products: [],
     editedIndex: -1,

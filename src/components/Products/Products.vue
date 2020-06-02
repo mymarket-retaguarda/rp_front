@@ -44,7 +44,7 @@ import {
   mdiMagnify,
   mdiPercentOutline,
   mdiPencilPlus,
-  mdiSemanticWeb
+  mdiPackageVariantClosed 
 } from "@mdi/js";
 
 export default {
@@ -59,7 +59,7 @@ export default {
         { title: "consultar produtos", component: SrcProducts, icon: mdiMagnify },
         { title: "novos produtos", component: NewProduct, icon: mdiPencilPlus  },
         { title: "promoções", component: PromProducts, icon: mdiPercentOutline  },
-        { title: "estoque", component: StockProducts, icon: mdiSemanticWeb }
+        { title: "estoque", component: StockProducts, icon: mdiPackageVariantClosed  }
       ]
     };
   }
