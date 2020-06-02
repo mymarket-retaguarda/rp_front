@@ -56,7 +56,7 @@
       <span>myMarket &copy; 2020</span>
 
       <v-spacer></v-spacer>
-      <div>{{ new Date() | dateFormat('YYYY.MM.DD', dateFormatConfig) }}</div>
+      <div>Data: 09/06/2020 | 10:36:22</div>
     </v-footer>
   </v-app>
 </template>
@@ -77,46 +77,6 @@ export default {
     source: String
   },
   data: () => ({
-    dateFormatConfig: {
-      dayOfWeekNames: [
-        "Domingo",
-        "Segunda",
-        "Terça",
-        "Quarta",
-        "Quinta",
-        "Sexta",
-        "Sábado"
-      ],
-      dayOfWeekNamesShort: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],
-      monthNames: [
-        "Janeiro",
-        "Fevereiro",
-        "Março",
-        "Abril",
-        "Maio",
-        "Junho",
-        "Julho",
-        "Agosto",
-        "Setembro",
-        "Outubro",
-        "Novembro",
-        "Dezembro"
-      ],
-      monthNamesShort: [
-        "Jan",
-        "Fev",
-        "Mar",
-        "Abr",
-        "Mai",
-        "Jun",
-        "Jul",
-        "Ago",
-        "Set",
-        "Out",
-        "Nov",
-        "Dez"
-      ]
-    },
     items: [
       { title: "Dashboard", icon: "mdi-view-dashboard", link: "/" },
       { title: "Produtos", icon: mdiBarcode, link: "/products" },
