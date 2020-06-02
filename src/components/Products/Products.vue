@@ -5,7 +5,7 @@
     </v-card-title>
 
     <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
-      <v-tab v-for="item in items" :key="item">{{ item.title }}</v-tab>
+      <v-tab v-for="item in items" :key="item">{{ item.title }} <v-icon id="titleIcon">{{ item.icon }}</v-icon></v-tab>
     </v-tabs>
 
     <v-tabs-items v-model="tab">
@@ -28,7 +28,10 @@
   padding: 15px;
 }
 #titleIcon {
-  margin-left: 10px;
+  margin-left: 7px;
+}
+.btn-form {
+  margin-right: 15px;
 }
 </style>
 
@@ -37,6 +40,12 @@ import SrcProducts from "./SrcProducts";
 import NewProduct from "./NewProduct";
 import PromProducts from "./PromProducts";
 import StockProducts from "./StockProducts";
+import {
+  mdiMagnify,
+  mdiPercentOutline,
+  mdiPencilPlus,
+  mdiSemanticWeb 
+} from "@mdi/js";
 
 export default {
   components: {
@@ -47,10 +56,10 @@ export default {
     return {
       tab: null,
       items: [
-        { title: "consultar produtos", component: SrcProducts },
-        { title: "novos produtos", component: NewProduct },
-        { title: "promoções", component: PromProducts },
-        { title: "estoque", component: StockProducts }
+        { title: "consultar produtos", component: SrcProducts, icon: mdiMagnify },
+        { title: "novos produtos", component: NewProduct, icon: mdiPencilPlus  },
+        { title: "promoções", component: PromProducts, icon: mdiPercentOutline  },
+        { title: "estoque", component: StockProducts, icon: mdiSemanticWeb }
       ]
     };
   }
