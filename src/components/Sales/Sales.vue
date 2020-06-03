@@ -5,7 +5,7 @@
     </v-card-title>
 
     <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
-      <v-tab v-for="item in items" :key="item">{{ item.title }}</v-tab>
+      <v-tab v-for="item in items" :key="item">{{ item.title }} <v-icon id="titleIcon">{{ item.icon }}</v-icon></v-tab>
     </v-tabs>
 
     <v-tabs-items v-model="tab">
@@ -26,6 +26,10 @@
 </style>
 
 <script>
+import {
+  mdiCartArrowDown,
+  mdiMagnify    
+} from '@mdi/js'
 
 export default {
   components: {
@@ -35,8 +39,8 @@ export default {
     return {
       tab: null,
       items: [
-        { title: "Últimas vendas", router: ''},
-        { title: "Buscar Vendas", router: '' }
+        { title: "Últimas vendas", component: '', icon: mdiCartArrowDown },
+        { title: "Buscar Vendas", component: '', icon: mdiMagnify }
       ]
     };
   }

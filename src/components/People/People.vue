@@ -39,7 +39,7 @@ import NewCollaborator from './NewCollaborator'
 import {
   mdiAccountMultiplePlus,
   mdiBriefcasePlus,
-  mdiBriefcaseSearchOutline,
+  mdiBriefcaseSearch,
   mdiAccountSearch
 } from "@mdi/js";
 
@@ -51,7 +51,7 @@ export default {
     return {
       tab: null,
       items: [
-        { title: "Consultar Fornecedores", component: Provider, icon: mdiBriefcaseSearchOutline },
+        { title: "Consultar Fornecedores", component: Provider, icon: mdiBriefcaseSearch },
         { title: "Novos Fornecedores", component: NewProvider, icon: mdiBriefcasePlus },
         { title: "Consultar Colaboradores", component: Collaborator, icon: mdiAccountSearch  },
         { title: "Novos Colaboradores", component: NewCollaborator, icon: mdiAccountMultiplePlus }

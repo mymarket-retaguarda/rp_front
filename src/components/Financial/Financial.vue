@@ -5,7 +5,7 @@
     </v-card-title>
 
     <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
-      <v-tab v-for="item in items" :key="item">{{ item.title }}</v-tab>
+      <v-tab v-for="item in items" :key="item">{{ item.title }} <v-icon id="titleIcon">{{ item.icon }}</v-icon></v-tab>
     </v-tabs>
 
     <v-tabs-items v-model="tab">
@@ -25,6 +25,11 @@
 </style>
 
 <script>
+import {
+  mdiCashMinus,
+  mdiCashPlus,
+  mdiCardBulleted    
+} from '@mdi/js'
 
 export default {
   components: {
@@ -33,9 +38,9 @@ export default {
     return {
       tab: null,
       items: [
-        { title: "contas à pagar", router: '' },
-        { title: "contas à receber", router: '' },
-        { title: "notas e boletos", router: '' }
+        { title: "contas à pagar", component: '', icon: mdiCashMinus },
+        { title: "contas à receber", component: '', icon: mdiCashPlus },
+        { title: "notas e boletos", component: '', icon: mdiCardBulleted }
       ]
     };
   }

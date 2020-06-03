@@ -5,7 +5,7 @@
     </v-card-title>
 
     <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
-      <v-tab v-for="item in items" :key="item">{{ item.title }}</v-tab>
+      <v-tab v-for="item in items" :key="item">{{ item.title }} <v-icon id="titleIcon">{{ item.icon }}</v-icon></v-tab>
     </v-tabs>
 
     <v-tabs-items v-model="tab">
@@ -23,9 +23,17 @@
 .basil--text {
   color: #0e6dcc !important;
 }
+#titleIcon {
+  margin-left: 7px;
+}
 </style>
 
 <script>
+import {
+  mdiMonitorDashboard,
+  mdiHomeCity,
+  mdiCashRegister 
+} from '@mdi/js'
 
 export default {
   components: {
@@ -35,9 +43,9 @@ export default {
     return {
       tab: null,
       items: [
-        { title: "Configurações Gerais", router: ''},
-        { title: "Configurações Retaguarda", router: '' },
-        { title: "Configurações PDV", router: '' }
+        { title: "Configurar Empresa", component: '', icon: mdiHomeCity },
+        { title: "Configurar Retaguarda", component: '', icon: mdiMonitorDashboard },
+        { title: "Configurar PDV", component: '', icon: mdiCashRegister }
       ]
     };
   }

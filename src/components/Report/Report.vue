@@ -5,7 +5,7 @@
     </v-card-title>
 
     <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
-      <v-tab v-for="item in items" :key="item">{{ item.title }}</v-tab>
+      <v-tab v-for="item in items" :key="item">{{ item.title }} <v-icon id="titleIcon">{{ item.icon }}</v-icon></v-tab>
     </v-tabs>
 
     <v-tabs-items v-model="tab">
@@ -26,6 +26,10 @@
 </style>
 
 <script>
+import {
+  mdiFileSearch ,
+  mdiFileMultiple   
+} from '@mdi/js'
 
 export default {
   components: {
@@ -35,8 +39,8 @@ export default {
     return {
       tab: null,
       items: [
-        { title: "Consultar Relatórios", router: ''},
-        { title: "Meus Relatórios", router: '' }
+        { title: "Consultar Relatórios", component: '', icon: mdiFileSearch},
+        { title: "Meus Relatórios", component: '', icon: mdiFileMultiple }
       ]
     };
   }

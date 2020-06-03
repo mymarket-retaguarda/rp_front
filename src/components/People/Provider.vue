@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import { mdiBriefcaseSearchOutline } from "@mdi/js";
+import { mdiBriefcaseSearch  } from "@mdi/js";
 
 export default {
   data: () => ({
@@ -73,7 +73,7 @@ export default {
       { text: "Ações", value: "actions", sortable: false }
     ],
     icons: {
-      icon: mdiBriefcaseSearchOutline
+      icon: mdiBriefcaseSearch 
     },
     provider: [],
     editedIndex: -1,
