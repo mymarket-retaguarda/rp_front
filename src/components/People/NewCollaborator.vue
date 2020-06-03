@@ -18,7 +18,15 @@
       </v-col>
 
       <v-col cols="12" md="3">
+        <v-select :items="sector" label="Setor"></v-select>
+      </v-col>
+
+      <v-col cols="12" md="3">
         <v-select :items="worth" label="Vale"></v-select>
+      </v-col>
+
+      <v-col cols="12" md="3">
+        <v-select :items="shift" label="Turno"></v-select>
       </v-col>
     </v-row>
     <v-row>
@@ -56,6 +64,19 @@ export default {
     worth: [
         "Liberado",
         "Bloqueado"
+    ],
+    sector: [
+      "Padaria",
+      "Açougue",
+      "Frente de Loja",
+      "RH",
+      "DP",
+      "Financeiro"
+    ],
+    shift: [
+      "Manhã",
+      "Tarde",
+      "Noite"
     ],
     icons: {
       icon: mdiAccountMultiplePlus

@@ -72,7 +72,7 @@
 
           <v-expansion-panel-content>
             <v-divider></v-divider>
-            <ListSalesUser />
+            <ListSales />
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
@@ -81,11 +81,11 @@
 </template>
 
 <script>
-import ListSalesUser from './ListSalesUser'
+import ListSales from './ListSales'
 
   export default {
     components: {
-      ListSalesUser: ListSalesUser
+      ListSales: ListSales
     },
     data: () => ({
       messages: [

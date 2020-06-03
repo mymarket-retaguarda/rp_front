@@ -1,7 +1,7 @@
 <template>
   <v-form v-model="valid">
     <v-card-title>
-      Cadastro de Produtos
+      Cadastro de Produto
       <v-icon id="titleIcon">{{ icons.icon }}</v-icon>
     </v-card-title>
     <v-row>

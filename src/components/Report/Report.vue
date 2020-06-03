@@ -11,7 +11,7 @@
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in items" :key="item">
         <v-card color="basil" flat>
-          <SrcProducts />
+          <compoment id="component"  :is="item.component"/>
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -25,6 +25,9 @@
 }
 #titleIcon {
   margin-left: 7px;
+}
+#component {
+  padding: 15px;
 }
 </style>
 
