@@ -11,7 +11,7 @@
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in items" :key="item">
         <v-card color="basil" flat>
-          <component :is="item.component" />
+          <component id="component" :is="item.component" />
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -20,6 +20,9 @@
 
 <style>
 /* Helper classes */
+#component {
+  padding: 15px;
+}
 .basil--text {
   color: #0e6dcc !important;
 }
