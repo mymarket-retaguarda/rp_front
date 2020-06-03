@@ -23,6 +23,9 @@
 .basil--text {
   color: #0e6dcc !important;
 }
+#titleIcon {
+  margin-left: 7px;
+}
 </style>
 
 <script>
