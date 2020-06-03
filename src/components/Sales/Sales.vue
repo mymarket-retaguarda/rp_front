@@ -32,7 +32,7 @@
 </style>
 
 <script>
-import LastSales from './LastSales'
+import ListSales from './ListSales'
 import SrcSales from './SrcSales'
 import {
   mdiCartArrowDown,
@@ -47,7 +47,7 @@ export default {
     return {
       tab: null,
       items: [
-        { title: "Últimas vendas", component: LastSales, icon: mdiCartArrowDown },
+        { title: "Últimas vendas", component: ListSales, icon: mdiCartArrowDown },
         { title: "Buscar Vendas", component: SrcSales , icon: mdiMagnify }
       ]
     };
