@@ -134,7 +134,7 @@ import { mdiAccountMultiplePlus } from "@mdi/js";
 
 export default {
   data: () => ({
-    dialog: true,
+    dialog: false,
     headers: [
       { text: "Nome", value: "name" },
       { text: "CPF", value: "cpf" },

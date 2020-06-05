@@ -157,7 +157,7 @@ import { mdiLayers, mdiLayersPlus } from "@mdi/js";
 
 export default {
   data: () => ({
-    dialog: true,
+    dialog: false,
     headers: [
       { text: "EAN-13", value: "ean" },
       { text: "Produto", value: "productName" },

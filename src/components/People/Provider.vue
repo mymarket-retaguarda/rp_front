@@ -129,7 +129,7 @@ import { mdiDomainPlus } from "@mdi/js";
 
 export default {
   data: () => ({
-    dialog: true,
+    dialog: false,
     headers: [
       { text: "Nome Fantasia", value: "name" },
       { text: "CNPJ", value: "cnpj" },

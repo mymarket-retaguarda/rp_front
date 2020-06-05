@@ -64,7 +64,7 @@
 <script>
 import {
   mdiAccount,
-  mdiBarcode,
+  mdiLayers,
   mdiAccountTie,
   mdiCashUsdOutline,
   mdiChartAreaspline,
@@ -79,7 +79,7 @@ export default {
   data: () => ({
     items: [
       { title: "Dashboard", icon: "mdi-view-dashboard", link: "/" },
-      { title: "Produtos", icon: mdiBarcode, link: "/products" },
+      { title: "Produtos", icon: mdiLayers, link: "/products" },
       { title: "Pessoas", icon: mdiAccountGroup, link: "/people" },
       { title: "Vendas", icon: mdiChartAreaspline, link: "/sales" },
       { title: "Financeiro", icon: mdiCashUsdOutline, link: "/financial" },
