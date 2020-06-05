@@ -1,22 +1,16 @@
 <template>
   <LastSales>
     <h1>Teste</h1>
-    <v-data-table
-      slot="lastsales"
-      :headers="headers"
-      :items="desserts"
-      :items-per-page="5"
-      class="elevation-1 lastsales"
-    ></v-data-table>
+    <v-data-table slot="lastsales" :headers="headers" :items="desserts" :items-per-page="5" class="elevation-1 lastsales"></v-data-table>
   </LastSales>
 </template>
 
 <script>
-import LastSales from "./LastSales";
+import LastSales from './LastSales';
 export default {
-  components: {
-    LastSales
-  },
+      components: {
+        LastSales
+      },
   data() {
     return {
       headers: [

@@ -48,7 +48,7 @@ export default {
       tab: null,
       items: [
         { title: "Últimas vendas", component: ListSales, icon: mdiCartArrowDown },
-        { title: "Buscar Vendas", component: SrcSales , icon: mdiMagnify }
+        { title: "Consultar Vendas", component: SrcSales , icon: mdiMagnify }
       ]
     };
   }
