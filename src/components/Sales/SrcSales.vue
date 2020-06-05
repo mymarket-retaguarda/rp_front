@@ -6,7 +6,7 @@
     </v-card-title>
     <v-row>
       <v-col cols="1" sm="4">
-        <v-date-picker v-model="singleDate" range no-title></v-date-picker>
+        <v-date-picker v-model="dates" range no-title></v-date-picker>
       </v-col>
       <v-col cols="1" sm="4">
         <h4>Filtro</h4>
@@ -29,8 +29,7 @@ export default {
       icons: {
         icon: mdiMagnify
       },
-      multDate: new Date(),
-      singleDate: new Date(),
+      dates: new Date(),
       menu: false,
       items: [
         {

@@ -56,11 +56,81 @@
         <v-btn color="primary" @click="initialize">Reset</v-btn>
       </template>
     </v-data-table>
+
+    <!-- modal -->
+
+    <v-row justify="center">
+      <v-dialog v-model="dialog" persistent max-width="80%">
+        <template v-slot:activator="{ on }">
+          <div class="my-2">
+            <v-btn color="info" id="add" v-on="on" fab>
+              <v-icon>{{ icons.iconAdd }}</v-icon>
+            </v-btn>
+          </div>
+        </template>
+        <v-card>
+          <v-card-title>
+            <span class="headline">Novo Colaborador</span>
+            <v-icon id="titleIcon">{{ icons.iconAdd }}</v-icon>
+          </v-card-title>
+          <v-card-text>
+            <v-container>
+              <v-row>
+                <v-col cols="12" md="3">
+                  <v-text-field v-model="name" label="Nome completo *"></v-text-field>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-text-field v-model="cpf" label="CPF *"></v-text-field>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-select :items="func" label="Função *"></v-select>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-select :items="sector" label="Setor *"></v-select>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-select :items="worth" label="Vale"></v-select>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-select :items="shift" label="Turno *"></v-select>
+                </v-col>
+              </v-row>
+            </v-container>
+            <small>* Preenchimento obrigatório</small>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn class="ma-2" color="primary" text @click="dialog = false" dark>
+              Salvar
+              <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
+            </v-btn>
+
+            <v-btn class="ma-2" color="red" text @click="dialog = false" dark>
+              Cancelar
+              <v-icon dark right>mdi-cancel</v-icon>
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+    </v-row>
+
+    <!-- modal -->
   </v-card>
 </template>
+<style scoped>
+#add {
+  margin-top: -40px;
+}
+</style>
 
 <script>
-import { mdiAccountSearch } from "@mdi/js";
+import { mdiAccountMultiple } from "@mdi/js";
+import { mdiAccountMultiplePlus } from "@mdi/js";
 
 export default {
   data: () => ({
@@ -74,7 +144,8 @@ export default {
       { text: "Ações", value: "actions", sortable: false }
     ],
     icons: {
-      icon: mdiAccountSearch
+      icon: mdiAccountMultiple,
+      iconAdd: mdiAccountMultiplePlus
     },
     products: [],
     editedIndex: -1,

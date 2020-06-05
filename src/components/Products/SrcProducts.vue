@@ -1,11 +1,9 @@
 <template>
   <v-card>
-
     <template v-slot:top>
       <v-toolbar flat color="white">
         <v-dialog v-model="dialog" max-width="500px">
           <v-card>
-
             <v-card-text>
               <v-container>
                 <v-row>
@@ -36,7 +34,8 @@
     </template>
 
     <v-card-title>
-      Consulta de Produtos <v-icon id="titleIcon">{{ icons.icon }}</v-icon>
+      Produtos
+      <v-icon id="titleIcon">{{ icons.icon }}</v-icon>
       <v-spacer></v-spacer>
       <v-text-field
         v-model="search"
@@ -57,13 +56,104 @@
         <v-btn color="primary" @click="initialize">Reset</v-btn>
       </template>
     </v-data-table>
+
+    <!-- modal -->
+
+    <v-row justify="center">
+      <v-dialog v-model="dialog" persistent max-width="80%">
+        <template v-slot:activator="{ on }">
+          <div class="my-2">
+            <v-btn color="info" id="add" v-on="on" fab>
+              <v-icon>{{ icons.iconAdd }}</v-icon>
+            </v-btn>
+          </div>
+        </template>
+        <v-card>
+          <v-card-title>
+            <span class="headline">Novo Produto</span>
+            <v-icon id="titleIcon">{{ icons.iconAdd }}</v-icon>
+          </v-card-title>
+          <v-card-text>
+            <v-container>
+              <v-row>
+                <v-col cols="12" md="3">
+                  <v-text-field v-model="barCod" label="Código de Barras"></v-text-field>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-text-field v-model="internCod" label="Código Interno"></v-text-field>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-text-field v-model="productName" label="Descrição do Produto"></v-text-field>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-text-field v-model="minProductName" label="Descrição Resumida"></v-text-field>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-select :items="provider" label="Fornecedor"></v-select>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-select :items="groupProducts" label="Grupo do Produto"></v-select>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-select :items="subGroupProducts" label="Sub-grupo do Produto"></v-select>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-select :items="und" label="Unidade de medida"></v-select>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-select :items="ncm" label="NCM"></v-select>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-select :items="cest" label="CEST"></v-select>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-select :items="cfop" label="CFOP"></v-select>
+                </v-col>
+
+                <v-col cols="12" md="3">
+                  <v-select :items="icms" label="Situação Tributária ICMS"></v-select>
+                </v-col>
+              </v-row>
+            </v-container>
+            <small>* Preenchimento obrigatório</small>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn class="ma-2" color="primary" text @click="dialog = false" dark>
+              Salvar
+              <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
+            </v-btn>
+
+            <v-btn class="ma-2" color="red" text @click="dialog = false" dark>
+              Cancelar
+              <v-icon dark right>mdi-cancel</v-icon>
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+    </v-row>
+
+    <!-- modal -->
   </v-card>
 </template>
+<style scoped>
+#add {
+  margin-top: -40px;
+}
+</style>
 
 <script>
-import {
-  mdiMagnify
-} from "@mdi/js";
+import { mdiLayers, mdiLayersPlus } from "@mdi/js";
 
 export default {
   data: () => ({
@@ -76,7 +166,8 @@ export default {
       { text: "Ações", value: "actions", sortable: false }
     ],
     icons: {
-      icon: mdiMagnify
+      icon: mdiLayers,
+      iconAdd: mdiLayersPlus
     },
     products: [],
     editedIndex: -1,
@@ -91,11 +182,25 @@ export default {
       ean: 0,
       quant: 0,
       price: ""
-    }
+    },
+    valid: false,
+    firstname: "",
+    lastname: "",
+    email: "",
+    groupProducts: ["Bebidas", "Carnes"],
+    subGroupProducts: ["Nacionais", "Importados"],
+    und: ["KG", "LT", "UND"],
+    ncm: ["5245.58.57", "2514.25.15", "3215.21.25", "2532.58.88"],
+    cest: ["17.096.00", "17.096.01", "17.096.02"],
+    cfop: ["1.000", "1.100", "1.101", "1.102"],
+    icms: ["ISENTO"],
+    emailRules: [
+      v => !!v || "E-mail is required",
+      v => /.+@.+/.test(v) || "E-mail must be valid"
+    ]
   }),
 
-  computed: {
-  },
+  computed: {},
 
   watch: {
     dialog(val) {

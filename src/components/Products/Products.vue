@@ -37,13 +37,11 @@
 
 <script>
 import SrcProducts from "./SrcProducts";
-import NewProduct from "./NewProduct";
 import PromProducts from "./PromProducts";
 import StockProducts from "./StockProducts";
 import {
-  mdiMagnify,
+  mdiLayers,
   mdiPercentOutline,
-  mdiPencilPlus,
   mdiPackageVariantClosed 
 } from "@mdi/js";
 
@@ -56,8 +54,7 @@ export default {
     return {
       tab: null,
       items: [
-        { title: "consultar produtos", component: SrcProducts, icon: mdiMagnify },
-        { title: "novos produtos", component: NewProduct, icon: mdiPencilPlus  },
+        { title: "Produtos", component: SrcProducts, icon: mdiLayers },
         { title: "promoções", component: PromProducts, icon: mdiPercentOutline  },
         { title: "estoque", component: StockProducts, icon: mdiPackageVariantClosed  }
       ]
