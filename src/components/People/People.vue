@@ -38,7 +38,7 @@
 import Provider from "./Provider";
 import Collaborator from "./Collaborator";
 import Clients from "./Clients";
-import { mdiAccountCash, mdiDomain, mdiAccountMultiple } from "@mdi/js";
+import { mdiCardAccountDetails, mdiDomain, mdiAccountMultiple } from "@mdi/js";
 
 export default {
   components: {
@@ -61,7 +61,7 @@ export default {
         { 
           title: "Clientes", 
           component: Clients, 
-          icon: mdiAccountCash 
+          icon: mdiCardAccountDetails 
         }
       ]
     };
