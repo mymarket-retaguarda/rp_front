@@ -34,7 +34,7 @@
     </template>
 
     <v-card-title>
-      Consulta de Colaboradores
+      Colaboradores
       <v-icon id="titleIcon">{{ icons.icon }}</v-icon>
       <v-spacer></v-spacer>
       <v-text-field
