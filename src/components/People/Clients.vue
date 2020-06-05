@@ -45,7 +45,7 @@
     </v-card-title>
 
     <v-card>
-      <v-tabs vertical>
+      <v-tabs horizontal>
         <v-tab left>
           <v-icon left>mdi-account</v-icon>Pessoa Fisica
         </v-tab>
@@ -107,7 +107,7 @@
           <v-card-text>
             <v-container>
               <v-card>
-                <v-tabs vertical>
+                <v-tabs horiontal>
                   <v-tab left>
                     <v-icon left>mdi-account</v-icon>Pessoa Fisica
                   </v-tab>
@@ -205,7 +205,7 @@
 
 <script>
 import { mdiCardAccountDetails } from "@mdi/js";
-import { mdiAccountMultiplePlus } from "@mdi/js";
+import { mdiAccountPlus } from "@mdi/js";
 
 export default {
   data: () => ({
@@ -220,7 +220,7 @@ export default {
     ],
     icons: {
       icon: mdiCardAccountDetails,
-      iconAdd: mdiAccountMultiplePlus
+      iconAdd: mdiAccountPlus
     },
     products: [],
     editedIndex: -1,
