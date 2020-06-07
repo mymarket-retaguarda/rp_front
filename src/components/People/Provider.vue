@@ -89,7 +89,47 @@
               </v-col>
 
               <v-col cols="12" md="3">
-                <v-select :items="group" label="Grupo"></v-select>
+                <v-text-field v-model="address" label="Endereço"></v-text-field>
+              </v-col>
+
+              <v-col cols="12" md="3">
+                <v-text-field v-model="state" label="Estado"></v-text-field>
+              </v-col>
+
+              <v-col cols="12" md="3">
+                <v-text-field v-model="city" label="Cidade"></v-text-field>
+              </v-col>
+
+              <v-col cols="12" md="3">
+                <v-text-field v-model="cep" label="CEP"></v-text-field>
+              </v-col>
+
+              <v-col cols="12" md="3">
+                <v-text-field v-model="email" label="E-mail"></v-text-field>
+              </v-col>
+
+              <v-col cols="12" md="3">
+                <v-text-field v-model="phone" label="Telefone"></v-text-field>
+              </v-col>
+
+              <v-col cols="12" md="3">
+                <v-text-field v-model="contact" label="Contato"></v-text-field>
+              </v-col>
+
+              <v-col cols="12" md="3">
+                <v-text-field v-model="phoneContact" label="Telefone do Contato"></v-text-field>
+              </v-col>
+
+              <v-col cols="12" md="3">
+                <v-text-field v-model="emailContact" label="E-mail do Contato"></v-text-field>
+              </v-col>
+
+              <v-col cols="12" md="3">
+                <v-text-field v-model="site" label="Site"></v-text-field>
+              </v-col>
+
+              <v-col cols="12" md="3">
+                <v-text-field v-model="obs" label="Observação"></v-text-field>
               </v-col>
             </v-row>
             </v-container>
@@ -133,8 +173,9 @@ export default {
     headers: [
       { text: "Nome Fantasia", value: "name" },
       { text: "CNPJ", value: "cnpj" },
-      { text: "IE", value: "ie" },
-      { text: "Grupo", value: "group" },
+      { text: "Contato", value: "contact" },
+      { text: "Telefone do contato", value: "phoneContact" },
+      { text: "E-mail do contato", value: "emailContact" },
       { text: "Ações", value: "actions", sortable: false }
     ],
     icons: {
@@ -175,20 +216,23 @@ export default {
         {
           name: "Cocacola Distribuidora de Bebidas LTDA",
           cnpj: "35.235.265/0001-58",
-          ie: "ISENTO",
-          group: "Bebidas"
+          contact: "Marcos Veras",
+          phoneContact: "11 95869-8548",
+          emailContact: "marcos.veras@cocacola.com.br"
         },
         {
           name: "Itaipava Distribuidora de Bebidas LTDA",
           cnpj: "35.236.528/0002-98",
-          ie: "89785487",
-          group: "Bebidas"
+          contact: "Natalia Meireles",
+          phoneContact: "11 98658-9965",
+          emailContact: "natalia.meireles@itaipava.com.br"
         },
         {
           name: "Pepisico Distribuidora de Alimentos LTDA",
           cnpj: "23.365.258/0001-69",
-          ie: "56462168",
-          group: "Não Perecíveis"
+          contact: "Lucas Bruno",
+          phoneContact: "11 97858-8659",
+          emailContact: "lucas.bruno@cocacola.com.br"
         }
       ];
     },

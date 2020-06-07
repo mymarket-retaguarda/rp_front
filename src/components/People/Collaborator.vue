@@ -199,7 +199,7 @@ export default {
           cpf: "125.158.147-99",
           function: "Gerente Geral",
           shift: "Noite",
-          status: "Serviço"
+          status: "Licença"
         },
         {
           name: "Jucelino Abelardo",
@@ -226,9 +226,9 @@ export default {
     },
 
     getColor(status) {
-      if (status === "Folga") return "red";
+      if (status === "Folga") return "orange";
       else if (status === "Serviço") return "green";
-      else return "green";
+      else if (status === "Licença") return "red";
     },
 
     editItem(item) {

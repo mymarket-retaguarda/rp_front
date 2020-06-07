@@ -55,7 +55,7 @@
 
         <v-tab-item>
           <v-card flat>
-            <v-data-table :headers="headers" :items="products" sort-by="status" class="elevation-1">
+            <v-data-table :headers="headersPf" :items="physicPerson" sort-by="status" class="elevation-1">
               <template v-slot:item.status="{ item }">
                 <v-chip :color="getColor(item.status)" dark>{{ item.status }}</v-chip>
               </template>
@@ -71,7 +71,7 @@
         </v-tab-item>
         <v-tab-item>
           <v-card flat>
-            <v-data-table :headers="headers" :items="products" sort-by="status" class="elevation-1">
+            <v-data-table :headers="headersPj" :items="legalPerson" sort-by="status" class="elevation-1">
               <template v-slot:item.status="{ item }">
                 <v-chip :color="getColor(item.status)" dark>{{ item.status }}</v-chip>
               </template>
@@ -127,19 +127,19 @@
                         </v-col>
 
                         <v-col cols="12" md="3">
-                          <v-select :items="func" label="Função *"></v-select>
+                          <v-text-field v-model="address" label="Endereço *"></v-text-field>
                         </v-col>
 
                         <v-col cols="12" md="3">
-                          <v-select :items="sector" label="Setor *"></v-select>
+                          <v-text-field v-model="complement" label="Complemento"></v-text-field>
                         </v-col>
 
                         <v-col cols="12" md="3">
-                          <v-select :items="worth" label="Vale"></v-select>
+                          <v-text-field v-model="city" label="Cidade *"></v-text-field>
                         </v-col>
 
                         <v-col cols="12" md="3">
-                          <v-select :items="shift" label="Turno *"></v-select>
+                          <v-text-field v-model="phone" label="Telefone"></v-text-field>
                         </v-col>
                       </v-row>
                     </v-card>
@@ -148,7 +148,7 @@
                     <v-card flat>
                       <v-row>
                         <v-col cols="12" md="3">
-                          <v-text-field v-model="nameFant" label="Nome Fantasia *"></v-text-field>
+                          <v-text-field v-model="name" label="Nome Fantasia *"></v-text-field>
                         </v-col>
 
                         <v-col cols="12" md="3">
@@ -156,19 +156,7 @@
                         </v-col>
 
                         <v-col cols="12" md="3">
-                          <v-select :items="ie" label="Inscrição Estadual *"></v-select>
-                        </v-col>
-
-                        <v-col cols="12" md="3">
-                          <v-select :items="ende" label="Endereço *"></v-select>
-                        </v-col>
-
-                        <v-col cols="12" md="3">
-                          <v-select :items="worth" label="Vale"></v-select>
-                        </v-col>
-
-                        <v-col cols="12" md="3">
-                          <v-select :items="shift" label="Turno *"></v-select>
+                          <v-select :items="ie" label="Grupo"></v-select>
                         </v-col>
                       </v-row>
                     </v-card>
@@ -210,33 +198,43 @@ import { mdiAccountPlus } from "@mdi/js";
 export default {
   data: () => ({
     dialog: false,
-    headers: [
+    headersPf: [
       { text: "Nome", value: "name" },
       { text: "CPF", value: "cpf" },
-      { text: "Função", value: "function" },
-      { text: "Turno", value: "shift" },
-      { text: "Status", value: "status" },
+      { text: "Endereço", value: "address" },
+      { text: "Complemento", value: "complement" },
+      { text: "Cidade", value: "city" },
+      { text: "Telefone", value: "phone" },
+      { text: "Ações", value: "actions", sortable: false }
+    ],
+    headersPj: [
+      { text: "Nome", value: "name" },
+      { text: "CNPJ", value: "cnpj" },
+      { text: "Telefone", value: "phone" },
       { text: "Ações", value: "actions", sortable: false }
     ],
     icons: {
       icon: mdiCardAccountDetails,
       iconAdd: mdiAccountPlus
     },
-    products: [],
+    physicPerson: [],
+    legalPerson: [],
     editedIndex: -1,
     editedItem: {
       name: "",
       cpf: "",
-      function: "",
-      shift: "",
-      status: ""
+      address: "",
+      complement: "",
+      city: "",
+      phone: ""
     },
     defaultItem: {
       name: "",
       cpf: "",
-      function: "",
-      shift: "",
-      status: ""
+      address: "",
+      complement: "",
+      city: "",
+      phone: ""
     }
   }),
 
@@ -254,54 +252,71 @@ export default {
 
   methods: {
     initialize() {
-      this.products = [
+      this.physicPerson = [
         {
           name: "Clodoaldo Maranhão",
           cpf: "524.165.157-99",
-          function: "Recursos Humanos",
-          shift: "Noite",
-          status: "Serviço"
+          address: "Rua Pamonha Fria N 10",
+          complement: "Apto 10 bloco 2",
+          city: "Rio de Janeiro",
+          phone: "21 98897-1876"
         },
         {
-          name: "Adauberto Nunes Cunha",
-          cpf: "147.168.158-55",
-          function: "Departamento Pessoal",
-          shift: "Manhã",
-          status: "Folga"
+          name: "Marginal Pinheiros da Silva",
+          cpf: "524.365.277-55",
+          address: "Rua Pereira Marcos Farias N 1110",
+          complement: "Lote 2 Quadra 10",
+          city: "Duque de Caxias",
+          phone: "21 98577-2276"
         },
         {
-          name: "Urmelinda Peres",
-          cpf: "125.158.147-99",
-          function: "Gerente Geral",
-          shift: "Noite",
-          status: "Serviço"
+          name: "Getulho Vargas Junior",
+          cpf: "524.368.997-19",
+          address: "Rua Mauricio Meireles N 99",
+          complement: "Sobrado",
+          city: "São João de Meriti",
+          phone: "21 98558-9685"
         },
         {
-          name: "Jucelino Abelardo",
-          cpf: "321.585.889-68",
-          function: "Auxiliar de Serviços Gerais",
-          shift: "Noite",
-          status: "Folga"
+          name: "Paulinho Gó Gó",
+          cpf: "774.165.133-11",
+          address: "Rua America",
+          complement: "Casa 2b",
+          city: "Piabetá",
+          phone: "21 96584-3625"
+        },
+      ];
+      this.legalPerson = [
+        {
+          name: "Carrefuor Raposo Tavares LTDA",
+          cnpj: "35.156.354/0001-23",
+          phone: "11 3652-3625"
         },
         {
-          name: "José Carlos Araujo",
-          cpf: "157.155.125-55",
-          function: "Caixa",
-          shift: "Manhã",
-          status: "Serviço"
+          name: "Pepisico Comercio de Alimentos LTDA",
+          cnpj: "17.156.222/0001-88",
+          phone: "11 4004-3562"
         },
         {
-          name: "josiclaide Amaral",
-          cpf: "152.111.458-44",
-          function: "Promotor",
-          shift: "Noite",
-          status: "Serviço"
-        }
+          name: "Ortobom Colchões LTDA ME",
+          cnpj: "35.156.354/0001-99",
+          phone: "11 98658-5865"
+        },
+        {
+          name: "Padaria Deus é Contigo LTDA ME",
+          cnpj: "35.156.354/0001-23",
+          phone: "11 4004-5847"
+        },
+        {
+          name: "Enel LTDA",
+          cnpj: "25.396.154/0001-55",
+          phone: "0800 2515-251"
+        },
       ];
     },
 
     getColor(status) {
-      if (status === "Folga") return "red";
+      if (status === "Folga") return "orange";
       else if (status === "Serviço") return "green";
       else return "green";
     },
