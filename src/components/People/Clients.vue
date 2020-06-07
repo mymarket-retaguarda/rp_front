@@ -44,7 +44,6 @@
       ></v-text-field>
     </v-card-title>
 
-    <v-card>
       <v-tabs horizontal>
         <v-tab left>
           <v-icon left>mdi-account</v-icon>Pessoa Fisica
@@ -86,7 +85,6 @@
           </v-card>
         </v-tab-item>
       </v-tabs>
-    </v-card>
 
     <!-- modal -->
 
@@ -106,7 +104,6 @@
           </v-card-title>
           <v-card-text>
             <v-container>
-              <v-card>
                 <v-tabs horiontal>
                   <v-tab left>
                     <v-icon left>mdi-account</v-icon>Pessoa Fisica
@@ -162,7 +159,6 @@
                     </v-card>
                   </v-tab-item>
                 </v-tabs>
-              </v-card>
             </v-container>
             <small>* Preenchimento obrigatório</small>
           </v-card-text>

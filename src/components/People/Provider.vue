@@ -77,11 +77,11 @@
             <v-container>
             <v-row>
               <v-col cols="12" md="3">
-                <v-text-field v-model="name" label="Nome Fantasia"></v-text-field>
+                <v-text-field v-model="name" label="Nome Fantasia *"></v-text-field>
               </v-col>
 
               <v-col cols="12" md="3">
-                <v-text-field v-model="cnpj" label="CNPJ"></v-text-field>
+                <v-text-field v-model="cnpj" label="CNPJ *"></v-text-field>
               </v-col>
 
               <v-col cols="12" md="3">
@@ -89,19 +89,19 @@
               </v-col>
 
               <v-col cols="12" md="3">
-                <v-text-field v-model="address" label="Endereço"></v-text-field>
+                <v-text-field v-model="address" label="Endereço *"></v-text-field>
               </v-col>
 
               <v-col cols="12" md="3">
-                <v-text-field v-model="state" label="Estado"></v-text-field>
+                <v-text-field v-model="state" label="Estado *"></v-text-field>
               </v-col>
 
               <v-col cols="12" md="3">
-                <v-text-field v-model="city" label="Cidade"></v-text-field>
+                <v-text-field v-model="city" label="Cidade *"></v-text-field>
               </v-col>
 
               <v-col cols="12" md="3">
-                <v-text-field v-model="cep" label="CEP"></v-text-field>
+                <v-text-field v-model="cep" label="CEP *"></v-text-field>
               </v-col>
 
               <v-col cols="12" md="3">
