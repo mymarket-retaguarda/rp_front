@@ -11,7 +11,7 @@
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in items" :key="item">
         <v-card color="basil" flat>
-          <SrcProducts />
+          <component :is="item.component" />
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -30,9 +30,10 @@
 
 <script>
 import {
-  mdiAccountGroup ,
-  mdiAccountPlus  
+  mdiAccountMultiple ,
+  mdiAccountCheck  
 } from '@mdi/js'
+import User from "./User"
 
 export default {
   components: {
@@ -42,8 +43,8 @@ export default {
     return {
       tab: null,
       items: [
-        { title: "Todos os Usuários", component: '', icon: mdiAccountGroup },
-        { title: "Novo Usuário", component: '', icon: mdiAccountPlus }
+        { title: "Usuário", component: User, icon: mdiAccountMultiple },
+        { title: "Permissionamento", component: '', icon: mdiAccountCheck }
       ]
     };
   }
