@@ -128,19 +128,75 @@ export default {
           { id: 5, name: "Pessoas", children: [
               {
                   id: 1,
-                  name: 'Visualizar Pessoas'
+                  name: 'Visualizar Pessoas',
+                  children: [
+                      {
+                          id: 1,
+                          name: 'Fornecedores'
+                      },
+                      {
+                          id: 2,
+                          name: 'Colaboradores'
+                      },
+                      {
+                          id: 3,
+                          name: 'Clientes'
+                      }
+                  ]
               },
               {
                   id: 2,
-                  name: 'Editar Pessoas'
+                  name: 'Editar Pessoas',
+                  children: [
+                      {
+                          id: 1,
+                          name: 'Fornecedores'
+                      },
+                      {
+                          id: 2,
+                          name: 'Colaboradores'
+                      },
+                      {
+                          id: 3,
+                          name: 'Clientes'
+                      }
+                  ]
               },
               {
                   id: 3,
-                  name: 'Criar Pessoas'
+                  name: 'Criar Pessoas',
+                  children: [
+                      {
+                          id: 1,
+                          name: 'Fornecedores'
+                      },
+                      {
+                          id: 2,
+                          name: 'Colaboradores'
+                      },
+                      {
+                          id: 3,
+                          name: 'Clientes'
+                      }
+                  ]
               },
               {
                   id: 4,
-                  name: 'Deletar Pessoas'
+                  name: 'Deletar Pessoas',
+                  children: [
+                      {
+                          id: 1,
+                          name: 'Fornecedores'
+                      },
+                      {
+                          id: 2,
+                          name: 'Colaboradores'
+                      },
+                      {
+                          id: 3,
+                          name: 'Clientes'
+                      }
+                  ]
               }
           ] },
           { id: 3, name: "Vendas", children: [
@@ -164,19 +220,75 @@ export default {
           { id: 4, name: "Financeiro", children: [
               {
                   id: 1,
-                  name: 'Visualizar Contas'
+                  name: 'Visualizar Contas',
+                  children: [
+                      {
+                          id: 1,
+                          name: 'Pagar'
+                      },
+                      {
+                          id: 2,
+                          name: 'Receber'
+                      },
+                      {
+                          id: 3,
+                          name: 'Notas e/ou Boletos'
+                      }
+                  ]
               },
               {
                   id: 2,
-                  name: 'Editar Contas'
+                  name: 'Editar Contas',
+                  children: [
+                      {
+                          id: 1,
+                          name: 'Pagar'
+                      },
+                      {
+                          id: 2,
+                          name: 'Receber'
+                      },
+                      {
+                          id: 3,
+                          name: 'Notas e/ou Boletos'
+                      }
+                  ]
               },
               {
                   id: 3,
-                  name: 'Criar Contas'
+                  name: 'Criar Contas',
+                  children: [
+                      {
+                          id: 1,
+                          name: 'Pagar'
+                      },
+                      {
+                          id: 2,
+                          name: 'Receber'
+                      },
+                      {
+                          id: 3,
+                          name: 'Notas e/ou Boletos'
+                      }
+                  ]
               },
               {
                   id: 4,
-                  name: 'Deletar Contas'
+                  name: 'Deletar Contas',
+                  children: [
+                      {
+                          id: 1,
+                          name: 'Pagar'
+                      },
+                      {
+                          id: 2,
+                          name: 'Receber'
+                      },
+                      {
+                          id: 3,
+                          name: 'Notas e/ou Boletos'
+                      }
+                  ]
               }
           ] },
           { id: 5, name: "Relatórios", children: [
