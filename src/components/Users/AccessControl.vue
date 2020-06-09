@@ -224,10 +224,7 @@ export default {
         id: 1,
         name: "PDV",
         children: [
-          { id: 1, name: "Matriz" },
-          { id: 5, name: "Jardim Leal" },
-          { id: 3, name: "Vila Operaria" },
-          { id: 4, name: "Beira Mar" }
+          { id: 1, name: "" },
         ]
       }
     ],
