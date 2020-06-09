@@ -11,7 +11,7 @@
     <v-tabs-items v-model="tab">
       <v-tab-item v-for="item in items" :key="item">
         <v-card color="basil" flat>
-          <component :is="item.component" />
+          <component id="component" :is="item.component" />
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -20,6 +20,9 @@
 
 <style>
 /* Helper classes */
+#component {
+  padding: 15px;
+}
 .basil--text {
   color: #0e6dcc !important;
 }
@@ -31,9 +34,10 @@
 <script>
 import {
   mdiAccountMultiple ,
-  mdiAccountCheck  
+  mdiAccountLock 
 } from '@mdi/js'
 import User from "./User"
+import AccessControl from "./AccessControl"
 
 export default {
   components: {
@@ -44,7 +48,7 @@ export default {
       tab: null,
       items: [
         { title: "Usuário", component: User, icon: mdiAccountMultiple },
-        { title: "Permissionamento", component: '', icon: mdiAccountCheck }
+        { title: "Controle de Acesso", component: AccessControl, icon: mdiAccountLock }
       ]
     };
   }

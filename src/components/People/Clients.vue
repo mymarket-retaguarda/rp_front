@@ -207,6 +207,9 @@ export default {
       { text: "Nome", value: "name" },
       { text: "CNPJ", value: "cnpj" },
       { text: "Telefone", value: "phone" },
+      { text: "Endereço", value: "address" },
+      { text: "Complemento", value: "complement" },
+      { text: "Cidade", value: "city" },
       { text: "Ações", value: "actions", sortable: false }
     ],
     icons: {
@@ -278,7 +281,7 @@ export default {
           cpf: "774.165.133-11",
           address: "Rua America",
           complement: "Casa 2b",
-          city: "Piabetá",
+          city: "Magé",
           phone: "21 96584-3625"
         },
       ];
@@ -286,27 +289,42 @@ export default {
         {
           name: "Carrefuor Raposo Tavares LTDA",
           cnpj: "35.156.354/0001-23",
-          phone: "11 3652-3625"
+          phone: "11 3652-3625",
+          address: "Rua Pamonha Fria N 10",
+          complement: "Apto 10 bloco 2",
+          city: "Rio de Janeiro",
         },
         {
           name: "Pepisico Comercio de Alimentos LTDA",
           cnpj: "17.156.222/0001-88",
-          phone: "11 4004-3562"
+          phone: "11 4004-3562",
+          address: "Rua Mauricio Meireles N 99",
+          complement: "Sobrado",
+          city: "São João de Meriti",
         },
         {
           name: "Ortobom Colchões LTDA ME",
           cnpj: "35.156.354/0001-99",
-          phone: "11 98658-5865"
+          phone: "11 98658-5865",
+          address: "Rua Guarani N 99",
+          complement: "Sobrado",
+          city: "Magé",
         },
         {
           name: "Padaria Deus é Contigo LTDA ME",
           cnpj: "35.156.354/0001-23",
-          phone: "11 4004-5847"
+          phone: "11 4004-5847",
+          address: "Rua General Rondon N 99",
+          complement: "Sobrado",
+          city: "Duque de Caxias",
         },
         {
           name: "Enel LTDA",
           cnpj: "25.396.154/0001-55",
-          phone: "0800 2515-251"
+          phone: "0800 2515-251",
+          address: "Av Algusto Sebastião N 1409",
+          complement: "Apto 22",
+          city: "Petrópolis",
         },
       ];
     },

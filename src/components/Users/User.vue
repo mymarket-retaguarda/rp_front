@@ -215,7 +215,7 @@ export default {
         {
           name: "Euclides Nascimento",
           cpf: "251.236.254-69",
-          profile: "Gerente",
+          profile: "Gerente Adm",
           password: "*********"
         },
         {
