@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-card-title>
-      Usuários
+      Perfis de Usuário
       <v-icon id="titleIcon">{{ icons.icon }}</v-icon>
       <v-spacer></v-spacer>
       <v-text-field
@@ -99,10 +99,7 @@ export default {
   data: () => ({
     dialog: false,
     headers: [
-      { text: "Nome", value: "name" },
-      { text: "cpf", value: "cpf" },
       { text: "Perfil", value: "profile" },
-      { text: "Senha", value: "password" },
       { text: "Ações", value: "actions", sortable: false }
     ],
     items1: [
@@ -264,34 +261,19 @@ export default {
     initialize() {
       this.provider = [
         {
-          name: "Euclides Nascimento",
-          cpf: "251.236.254-69",
-          profile: "Gerente Adm",
-          password: "*********"
+          profile: "Gerente Adm"
         },
         {
-          name: "Carla Prado",
-          cpf: "168.669.635-68",
-          profile: "Operadora de Caixa",
-          password: "*********"
+          profile: "Operadora de Caixa"
         },
         {
-          name: "Marcia Baldanza",
-          cpf: "336.695.875-01",
-          profile: "Fiscal de Loja",
-          password: "*********"
+          profile: "Fiscal de Loja"
         },
         {
-          name: "Lucio Flavio",
-          cpf: "365.362.559-02",
-          profile: "Gerente",
-          password: "*********"
+          profile: "Gerente"
         },
         {
-          name: "Patricia Neves",
-          cpf: "325.225.325-85",
-          profile: "Financeiro",
-          password: "*********"
+          profile: "Financeiro"
         }
       ];
     },
