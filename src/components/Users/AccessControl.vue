@@ -7,7 +7,7 @@
       <v-text-field
         v-model="search"
         append-icon="mdi-magnify"
-        label="Consulte os usuários por nome, cpf ou perfil..."
+        label="Consulte os perfis por nome..."
       ></v-text-field>
     </v-card-title>
 
