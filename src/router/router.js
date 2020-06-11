@@ -1,14 +1,15 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import SalesUser from '../src/components/Sales/SalesUser.vue'
-import Products from '../src/components/Products/Products.vue'
-import People from '../src/components/People/People.vue'
-import Sales from '../src/components/Sales/Sales.vue'
-import Financial from '../src/components/Financial/Financial.vue'
-import Report from '../src/components/Report/Report.vue'
-import Users from '../src/components/Users/Users.vue'
-import Admin from '../src/components/Admin/Admin.vue'
-import Config from '../src/components/Config/Config.vue'
+import SalesUser from '../components/Sales/SalesUser.vue'
+import Products from '../components/Products/Products.vue'
+import People from '../components/People/People.vue'
+import Sales from '../components/Sales/Sales.vue'
+import Financial from '../components/Financial/Financial.vue'
+import Report from '../components/Report/Report.vue'
+import Users from '../components/Users/Users.vue'
+import Admin from '../components/Admin/Admin.vue'
+import Config from '../components/Config/Config.vue'
+import Imports from '../components/Imports/Imports.vue'
 
 Vue.use(Router);
 
@@ -50,6 +51,10 @@ const router = new Router({
     {
       path: '/config',
       component: Config
+    },
+    {
+      path: '/imports',
+      component: Imports
     }
   ]
 });

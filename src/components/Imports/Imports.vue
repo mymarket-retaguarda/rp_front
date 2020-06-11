@@ -1,7 +1,7 @@
 <template>
   <v-card color="basil">
     <v-card-title class="text-center justify-center py-6">
-      <h1 class="font-weight-bold display-3 basil--text">Pessoas</h1>
+      <h1 class="font-weight-bold display-3 basil--text">Imports</h1>
     </v-card-title>
 
     <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
@@ -35,10 +35,9 @@
 </style>
 
 <script>
-import Provider from "./Provider";
-import Collaborator from "./Collaborator";
-import Clients from "./Clients";
-import { mdiCardAccountDetails, mdiDomain, mdiAccountMultiple } from "@mdi/js";
+import Import from "./Import";
+import Response from "./Response";
+import { mdiFileDownload, mdiFileSearch } from "@mdi/js";
 
 export default {
   components: {
@@ -49,19 +48,14 @@ export default {
       tab: null,
       items: [
         { 
-          title: "Fornecedores", 
-          component: Provider, 
-          icon: mdiDomain,
+          title: "Importar Arquivo", 
+          component: Import, 
+          icon: mdiFileDownload,
         },
         {
-          title: "Colaboradores",
-          component: Collaborator,
-          icon: mdiAccountMultiple
-        },
-        { 
-          title: "Clients", 
-          component: Clients, 
-          icon: mdiCardAccountDetails 
+          title: "Visualizar Resposta",
+          component: Response,
+          icon: mdiFileSearch
         }
       ]
     };

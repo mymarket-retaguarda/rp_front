@@ -86,7 +86,8 @@ export default {
       { title: "Relatórios", icon: mdiFileChart, link: "/report" },
       { title: "Usuários", icon: mdiAccount, link: "/users" },
       { title: "Área Administrativa", icon: mdiAccountTie, link: "/admin" },
-      { title: "Configurações", icon: "mdi-cog", link: "/config" }
+      { title: "Configurações", icon: "mdi-cog", link: "/config" },
+      { title: "Importar Arquivo", icon: "mdi-file-download", link: "/imports" }
     ],
     drawer: null,
     ChangeTheme: false,
