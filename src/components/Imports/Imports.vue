@@ -1,7 +1,7 @@
 <template>
   <v-card color="basil">
     <v-card-title class="text-center justify-center py-6">
-      <h1 class="font-weight-bold display-3 basil--text">Importar Arquivo</h1>
+      <h1 class="font-weight-bold display-3 basil--text">Importar XML</h1>
     </v-card-title>
 
     <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
@@ -53,7 +53,7 @@ export default {
           icon: mdiFileDownload,
         },
         {
-          title: "Visualizar Resposta",
+          title: "Visualizar Nota Fiscal",
           component: Response,
           icon: mdiFileSearch
         }

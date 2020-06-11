@@ -1,11 +1,11 @@
 <template>
   <v-card>
     <v-card-title>
-      Importar arquivo CSV
+      Importar Nota XML
       <v-icon id="titleIcon">{{ icons.icon }}</v-icon>
     </v-card-title>
     <form method="POST">
-      <v-file-input accept="csv/*" label="Arquivo CSV"></v-file-input>
+      <v-file-input accept="csv/*" label="Nota Fiscal XML"></v-file-input>
       <v-spacer></v-spacer>
       <v-btn
         :loading="loading"
