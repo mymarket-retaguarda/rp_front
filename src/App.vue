@@ -5,7 +5,7 @@
         <v-list-item two-line :class="miniVariant && 'px-0'">
           <v-list-item-avatar>
             <img
-              src="https://scontent.fgru5-1.fna.fbcdn.net/v/t1.0-9/84147709_1041326446242828_5316676609116209152_n.jpg?_nc_cat=103&_nc_sid=7aed08&_nc_eui2=AeFXOXjCnBl_lWsH3l43F9Um-fW4xTlFuW759bjFOUW5btWCfd7FDy29CdaHMJGVGIDAd7pyb2bH4WeIe6coRO5F&_nc_oc=AQnPp5uBJWrAxbVl0MsR0DCzTVF6XATvAhVGn-YKbo2xhmplRC6i1PcAlB9vADm-G1UD57XUAe-vt8JPQHjgs1nb&_nc_ht=scontent.fgru5-1.fna&oh=ac11e60792202ea25f9a0b66935262a3&oe=5EFB6965"
+              src="https://instagram.fgru5-1.fna.fbcdn.net/v/t51.2885-15/e35/c0.135.1080.1080a/s320x320/107936828_734063604042284_4520004555245034033_n.jpg?_nc_ht=instagram.fgru5-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=sOfDomXh7hUAX-a8tmA&oh=028508b98e8d02b23db7d573f99ed1d8&oe=5F67F13D"
             />
           </v-list-item-avatar>
 
