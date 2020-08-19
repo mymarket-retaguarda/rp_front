@@ -5,7 +5,7 @@
         <v-list-item two-line :class="miniVariant && 'px-0'">
           <v-list-item-avatar>
             <img
-              src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png"
+              src="https://image.flaticon.com/icons/png/512/206/206853.png"
             />
           </v-list-item-avatar>
 
