@@ -1,7 +1,7 @@
 <template>
   <v-card color="basil">
     <v-card-title class="text-center justify-center py-6">
-      <h1 class="font-weight-bold display-3 basil--text">Importar XML</h1>
+      <h1 class="font-weight-bold display-3 basil--text">Notas Fiscais e XML</h1>
     </v-card-title>
 
     <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
@@ -35,9 +35,10 @@
 </style>
 
 <script>
+import IssueNote from "./IssueNote";
 import Import from "./Import";
 import Response from "./Response";
-import { mdiFileDownload, mdiFileSearch } from "@mdi/js";
+import { mdiFileImport, mdiFileSearch, mdiFileExport } from "@mdi/js";
 
 export default {
   components: {
@@ -48,9 +49,14 @@ export default {
       tab: null,
       items: [
         { 
+          title: "Emitir Nota Fiscal", 
+          component: IssueNote, 
+          icon: mdiFileExport,
+        },
+        { 
           title: "Importar Arquivo", 
           component: Import, 
-          icon: mdiFileDownload,
+          icon: mdiFileImport,
         },
         {
           title: "Visualizar Nota Fiscal",

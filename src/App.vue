@@ -69,7 +69,8 @@ import {
   mdiCashUsdOutline,
   mdiChartAreaspline,
   mdiAccountGroup,
-  mdiFileChart
+  mdiFileChart,
+  mdiFileMultiple
 } from "@mdi/js";
 
 export default {
@@ -80,7 +81,7 @@ export default {
     items: [
       { title: "Dashboard", icon: "mdi-view-dashboard", link: "/" },
       { title: "Produtos", icon: mdiLayers, link: "/products" },
-      { title: "Importar XML", icon: "mdi-file-download", link: "/imports" },
+      { title: "Notas Fiscais", icon: mdiFileMultiple, link: "/imports" },
       { title: "Pessoas", icon: mdiAccountGroup, link: "/people" },
       { title: "Vendas", icon: mdiChartAreaspline, link: "/sales" },
       { title: "Financeiro", icon: mdiCashUsdOutline, link: "/financial" },
