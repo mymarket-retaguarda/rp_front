@@ -109,7 +109,7 @@ export default {
     const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     const dateTime = date +' '+ time;
     this.timestamp = dateTime;
-   }
+   },
     chengeTheme() {
       if (this.ChangeTheme === false) {
         this.$vuetify.theme.dark = true;
