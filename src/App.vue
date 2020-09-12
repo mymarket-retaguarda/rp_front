@@ -102,7 +102,7 @@ export default {
   computed: {
     setTimeout(() => {
     setTime();
-    });
+    }, 1000);
   },
   methods: {
    setTime() {
