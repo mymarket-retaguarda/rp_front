@@ -98,9 +98,9 @@ export default {
   }),
   created() {
     this.$vuetify.theme.dark = this.ChangeTheme;
+    setInterval(this.setTime, 1000);
   },
   computed: {
-    setInterval(this.setTime, 1000);
   },
   methods: {
    setTime: function() {
