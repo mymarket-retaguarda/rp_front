@@ -100,12 +100,10 @@ export default {
     this.$vuetify.theme.dark = this.ChangeTheme;
   },
   computed: {
-    setTimeout(() => {
-    setTime();
-    }, 1000);
+    setInterval(this.setTime, 1000);
   },
   methods: {
-   setTime() {
+   setTime: function() {
     const today = new Date();
     const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
