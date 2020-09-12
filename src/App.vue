@@ -56,7 +56,7 @@
       <span>myMarket &copy; 2020</span>
 
       <v-spacer></v-spacer>
-      <div>Data: ${timestamp}</div>
+      <div>Data: {{timestamp}}</div>
     </v-footer>
   </v-app>
 </template>
