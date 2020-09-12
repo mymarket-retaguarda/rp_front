@@ -56,7 +56,7 @@
       <span>myMarket &copy; 2020</span>
 
       <v-spacer></v-spacer>
-      <div>Data: 09/06/2020 | 10:36:22</div>
+      <div>Data: ${timestamp}</div>
     </v-footer>
   </v-app>
 </template>
@@ -78,6 +78,7 @@ export default {
     source: String
   },
   data: () => ({
+    timestamp: '',
     items: [
       { title: "Dashboard", icon: "mdi-view-dashboard", link: "/" },
       { title: "Produtos", icon: mdiLayers, link: "/products" },
@@ -98,8 +99,19 @@ export default {
   created() {
     this.$vuetify.theme.dark = this.ChangeTheme;
   },
-  computed: {},
+  computed: {
+    setTimeout(() => {
+    setTime();
+    });
+  },
   methods: {
+   setTime() {
+    const today = new Date();
+    const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    const dateTime = date +' '+ time;
+    this.timestamp = dateTime;
+   }
     chengeTheme() {
       if (this.ChangeTheme === false) {
         this.$vuetify.theme.dark = true;
